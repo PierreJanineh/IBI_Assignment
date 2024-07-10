@@ -56,8 +56,20 @@
 		87B0F00A2C3D6D5D0095359A /* IBI Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				87B0F0222C3D75300095359A /* Resources */,
 				87B0F0282C3DB2E00095359A /* App */,
+				87B0F0192C3D6D5F0095359A /* Info.plist */,
+			);
 			path = "IBI Assignment";
+			sourceTree = "<group>";
+		};
+		87B0F0222C3D75300095359A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				87B0F0142C3D6D5F0095359A /* Assets.xcassets */,
+				87B0F0162C3D6D5F0095359A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		87B0F0282C3DB2E00095359A /* App */ = {
