@@ -13,6 +13,7 @@
 		87B0F0132C3D6D5D0095359A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 87B0F0122C3D6D5D0095359A /* Base */; };
 		87B0F0152C3D6D5F0095359A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B0F0142C3D6D5F0095359A /* Assets.xcassets */; };
 		87B0F0182C3D6D5F0095359A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 87B0F0172C3D6D5F0095359A /* Base */; };
+		87B0F0212C3D72340095359A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 87B0F0202C3D72340095359A /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B0F0212C3D72340095359A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +102,9 @@
 			dependencies = (
 			);
 			name = "IBI Assignment";
+			packageProductDependencies = (
+				87B0F0202C3D72340095359A /* Lottie */,
+			);
 			productName = "IBI Assignment";
 			productReference = 87B0F0082C3D6D5D0095359A /* IBI Assignment.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +133,9 @@
 				Base,
 			);
 			mainGroup = 87B0EFFF2C3D6D5D0095359A;
+			packageReferences = (
+				87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 87B0F0092C3D6D5D0095359A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87B0F0202C3D72340095359A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 87B0F0002C3D6D5D0095359A /* Project object */;
 }
