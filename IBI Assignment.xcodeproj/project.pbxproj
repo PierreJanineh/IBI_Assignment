@@ -20,6 +20,7 @@
 		87B0F0312C3DB54D0095359A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F0302C3DB54D0095359A /* AuthenticationService.swift */; };
 		87B0F0332C3DBA950095359A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F0322C3DBA950095359A /* AuthResponse.swift */; };
 		87B0F0352C3EB8AE0095359A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 87B0F0342C3EB8AE0095359A /* Localizable.xcstrings */; };
+		87B0F03A2C3EDAB90095359A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 87B0F0392C3EDAB90095359A /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B0F0212C3D72340095359A /* Lottie in Frameworks */,
+				87B0F03A2C3EDAB90095359A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +163,7 @@
 			name = "IBI Assignment";
 			packageProductDependencies = (
 				87B0F0202C3D72340095359A /* Lottie */,
+				87B0F0392C3EDAB90095359A /* Alamofire */,
 			);
 			productName = "IBI Assignment";
 			productReference = 87B0F0082C3D6D5D0095359A /* IBI Assignment.app */;
@@ -192,6 +195,7 @@
 			mainGroup = 87B0EFFF2C3D6D5D0095359A;
 			packageReferences = (
 				87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				87B0F0382C3EDAB90095359A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 87B0F0092C3D6D5D0095359A /* Products */;
 			projectDirPath = "";
@@ -469,6 +473,14 @@
 				minimumVersion = 4.4.3;
 			};
 		};
+		87B0F0382C3EDAB90095359A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -476,6 +488,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		87B0F0392C3EDAB90095359A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87B0F0382C3EDAB90095359A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
