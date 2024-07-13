@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872D92112C42828A001A8E7A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 872D92102C42828A001A8E7A /* SDWebImage */; };
 		87B0F00C2C3D6D5D0095359A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F00B2C3D6D5D0095359A /* AppDelegate.swift */; };
 		87B0F00E2C3D6D5D0095359A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F00D2C3D6D5D0095359A /* SceneDelegate.swift */; };
 		87B0F0102C3D6D5D0095359A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F00F2C3D6D5D0095359A /* LoginViewController.swift */; };
@@ -20,7 +21,6 @@
 		87B0F0312C3DB54D0095359A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F0302C3DB54D0095359A /* AuthenticationService.swift */; };
 		87B0F0332C3DBA950095359A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F0322C3DBA950095359A /* AuthResponse.swift */; };
 		87B0F0352C3EB8AE0095359A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 87B0F0342C3EB8AE0095359A /* Localizable.xcstrings */; };
-		87B0F03A2C3EDAB90095359A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 87B0F0392C3EDAB90095359A /* Alamofire */; };
 		87B0F0402C3EDB1C0095359A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F03F2C3EDB1C0095359A /* Product.swift */; };
 		87B0F0472C3EDF1D0095359A /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F0462C3EDF1D0095359A /* Products.swift */; };
 		87B0F0492C3EDF3E0095359A /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B0F0482C3EDF3E0095359A /* Dimensions.swift */; };
@@ -59,8 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872D92112C42828A001A8E7A /* SDWebImage in Frameworks */,
 				87B0F0212C3D72340095359A /* Lottie in Frameworks */,
-				87B0F03A2C3EDAB90095359A /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +192,7 @@
 			name = "IBI Assignment";
 			packageProductDependencies = (
 				87B0F0202C3D72340095359A /* Lottie */,
-				87B0F0392C3EDAB90095359A /* Alamofire */,
+				872D92102C42828A001A8E7A /* SDWebImage */,
 			);
 			productName = "IBI Assignment";
 			productReference = 87B0F0082C3D6D5D0095359A /* IBI Assignment.app */;
@@ -224,7 +224,7 @@
 			mainGroup = 87B0EFFF2C3D6D5D0095359A;
 			packageReferences = (
 				87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				87B0F0382C3EDAB90095359A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				872D920F2C42828A001A8E7A /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 87B0F0092C3D6D5D0095359A /* Products */;
 			projectDirPath = "";
@@ -501,6 +501,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		872D920F2C42828A001A8E7A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.4;
+			};
+		};
 		87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -509,26 +517,18 @@
 				minimumVersion = 4.4.3;
 			};
 		};
-		87B0F0382C3EDAB90095359A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		872D92102C42828A001A8E7A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872D920F2C42828A001A8E7A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		87B0F0202C3D72340095359A /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 87B0F01F2C3D72340095359A /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
-		};
-		87B0F0392C3EDAB90095359A /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 87B0F0382C3EDAB90095359A /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
