@@ -17,7 +17,7 @@ struct Product: Codable {
     let rating: Double
     let stock: Int
     let tags: [Tag]
-    let brand: String
+    let brand: String?
     let sku: String
     let weight: Int
     let dimensions: Dimensions
