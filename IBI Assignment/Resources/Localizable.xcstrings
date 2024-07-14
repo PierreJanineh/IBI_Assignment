@@ -66,6 +66,17 @@
           }
         }
       }
+    },
+    "products" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Products"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
