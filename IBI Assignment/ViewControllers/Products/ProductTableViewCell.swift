@@ -98,7 +98,7 @@ class ProductTableViewCell: UITableViewCell {
         thumbnailImageView.sd_setImage(with: product.thumbnail)
         titleLabel.text = product.title
         brandLabel.text = product.brand
-        descriptionLabel.text = product.description
+        descriptionLabel.text = product.desc
         priceLabel.text = "$\(product.price)"
     }
 }

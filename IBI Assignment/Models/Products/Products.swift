@@ -9,4 +9,8 @@ import Foundation
 
 struct Products: Codable {
     let products: [Product]
+    
+    var productEntities: [ProductEntity] {
+        products.map { ProductEntity(product: $0) }
+    }
 }

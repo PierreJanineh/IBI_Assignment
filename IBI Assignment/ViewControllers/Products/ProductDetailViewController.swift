@@ -133,7 +133,7 @@ class ProductDetailViewController: UIViewController {
     private func configure(with product: Product) {
         titleLabel.text = product.title
         brandLabel.text = product.brand
-        descriptionLabel.text = product.description
+        descriptionLabel.text = product.desc
         priceLabel.text = "$\(product.price)"
     }
 }

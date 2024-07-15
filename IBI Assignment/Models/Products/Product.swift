@@ -10,7 +10,7 @@ import Foundation
 struct Product: Codable {
     let id: Int
     let title: String
-    let description: String
+    let desc: String
     let category: Category
     let price: Double
     let discountPercentage: Double
@@ -30,4 +30,29 @@ struct Product: Codable {
     let meta: Meta
     let images: [URL]
     let thumbnail: URL
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case desc = "description"
+        case category
+        case price
+        case discountPercentage
+        case rating
+        case stock
+        case tags
+        case brand
+        case sku
+        case weight
+        case dimensions
+        case warrantyInformation
+        case shippingInformation
+        case availabilityStatus
+        case reviews
+        case returnPolicy
+        case minimumOrderQuantity
+        case meta
+        case images
+        case thumbnail
+    }
 }
