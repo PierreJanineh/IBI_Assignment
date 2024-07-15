@@ -83,10 +83,15 @@ class ProductDetailViewController: UIViewController {
         title = viewModel.product.title
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = favoritesButton
-        view.backgroundColor = .white
+        
+        registerForTraitChanges([UITraitUserInterfaceStyle.self], action: #selector(setColor))
         
         setupViews()
         configure(with: viewModel.product)
+    }
+    
+    @objc private func setColor() {
+        view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .black : .white
     }
     
     @objc private func favoriteTapped() {

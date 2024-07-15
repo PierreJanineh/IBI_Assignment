@@ -47,12 +47,12 @@ class ProductTableViewCell: UITableViewCell {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
+        stack.distribution = .equalCentering
         return stack
     }()
     
     private let mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
         view.layer.cornerRadius = 25
         view.layer.shadowRadius = 10
         view.layer.shadowOpacity = 0.7
@@ -63,6 +63,8 @@ class ProductTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        setColors()
+        
         self.contentView.addSubview(mainView)
         
         mainView.addSubview(mainVStack)
@@ -72,6 +74,8 @@ class ProductTableViewCell: UITableViewCell {
         mainVStack.addArrangedSubview(brandLabel)
         mainVStack.addArrangedSubview(descriptionLabel)
         mainVStack.addArrangedSubview(priceLabel)
+        
+        thumbnailImageView.widthAnchor.constraint(equalTo: mainVStack.widthAnchor, multiplier: 0.5).isActive = true
         
         mainView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -100,5 +104,31 @@ class ProductTableViewCell: UITableViewCell {
         brandLabel.text = product.brand
         descriptionLabel.text = product.desc
         priceLabel.text = "$\(product.price)"
+    }
+    
+    func setColors() {
+        if self.traitCollection.userInterfaceStyle == .dark {
+            mainView.backgroundColor = .darkText
+            mainView.layer.shadowColor = UIColor.lightText.cgColor
+            
+            titleLabel.textColor = .lightText
+            brandLabel.textColor = .lightText
+            descriptionLabel.textColor = .lightText
+            priceLabel.textColor = .lightText
+        } else {
+            mainView.backgroundColor = .lightText
+            mainView.layer.shadowColor = UIColor.darkText.cgColor
+            
+            titleLabel.textColor = .darkText
+            brandLabel.textColor = .darkText
+            descriptionLabel.textColor = .darkText
+            priceLabel.textColor = .darkText
+        }
+    }
+}
+
+extension ProductTableViewCell: ColorSchemeAdaptableCell {
+    func configureColorScheme() {
+        setColors()
     }
 }

@@ -29,6 +29,7 @@
 		872D92442C456AED001A8E7A /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92432C456AED001A8E7A /* UserDefaultsService.swift */; };
 		872D92462C457F68001A8E7A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92452C457F68001A8E7A /* AppManager.swift */; };
 		872D924C2C459519001A8E7A /* LocalizedStringResource+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D924B2C459519001A8E7A /* LocalizedStringResource+Language.swift */; };
+		872D924F2C45A033001A8E7A /* ColorSchemeAdabtableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D924E2C45A033001A8E7A /* ColorSchemeAdabtableCell.swift */; };
 		872D92512C45B3A4001A8E7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92502C45B3A4001A8E7A /* AppState.swift */; };
 		872D92532C45CE71001A8E7A /* SettingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92522C45CE71001A8E7A /* SettingEnum.swift */; };
 		87A35BD52C3F488C00A874BC /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */; };
@@ -83,6 +84,7 @@
 		872D92452C457F68001A8E7A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		872D92482C458396001A8E7A /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Main.strings; sourceTree = "<group>"; };
 		872D924B2C459519001A8E7A /* LocalizedStringResource+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringResource+Language.swift"; sourceTree = "<group>"; };
+		872D924E2C45A033001A8E7A /* ColorSchemeAdabtableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeAdabtableCell.swift; sourceTree = "<group>"; };
 		872D92502C45B3A4001A8E7A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		872D92522C45CE71001A8E7A /* SettingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEnum.swift; sourceTree = "<group>"; };
 		87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				872D922D2C451727001A8E7A /* PaginableDelegate.swift */,
 				872D921F2C43BCAA001A8E7A /* PaginableProductsTableViewController.swift */,
+				872D924E2C45A033001A8E7A /* ColorSchemeAdabtableCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			files = (
 				87B0F0512C3EDF810095359A /* Tag.swift in Sources */,
 				872D923C2C4523D1001A8E7A /* ColorScheme.swift in Sources */,
+				872D924F2C45A033001A8E7A /* ColorSchemeAdabtableCell.swift in Sources */,
 				87A35BD82C3F4CE000A874BC /* ProductTableViewCell.swift in Sources */,
 				872D92162C43AD8F001A8E7A /* ImagePageViewController.swift in Sources */,
 				87A35BDA2C3F4F8100A874BC /* ProductDetailViewController.swift in Sources */,

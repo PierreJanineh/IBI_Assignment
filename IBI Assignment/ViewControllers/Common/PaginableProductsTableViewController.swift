@@ -12,31 +12,34 @@ class PaginableProductsTableViewController: UIViewController {
     private(set) var totalPageCount: Int = 0
     
     private var currentlyDisplayedProducts: [ProductEntity] = []
-    private let tableView: UITableView = .init()
+    private var tableView: UITableView?
     
     var paginationDelegate: PaginableDelegate?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupTableView()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Disable selection after dismissing ProductDetailViewController
-        tableView.selectRow(at: nil,
+        tableView?.selectRow(at: nil,
                             animated: true,
                             scrollPosition: .none)
+        setupTableView()
     }
     
     func reloadData() {
-        tableView.reloadData()
+        tableView?.reloadData()
         loadMoreData()
     }
     
     private func setupTableView() {
+        // Reinitialize UITableView to adapt to selected ColoScheme
+        if let _ = tableView {
+            tableView?.removeFromSuperview()
+        }
+        tableView = .init()
+        
+        guard let tableView else { return }
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -68,13 +71,13 @@ class PaginableProductsTableViewController: UIViewController {
         else {
             if endIndex != currentlyDisplayedProducts.count {
                 currentlyDisplayedProducts = data
-                tableView.reloadData()
+                tableView?.reloadData()
             }
             return
         }
         
         currentlyDisplayedProducts.append(contentsOf: data[startIndex..<endIndex])
-        tableView.reloadData()
+        tableView?.reloadData()
         currentPage += 1
     }
 }
