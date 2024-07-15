@@ -68,4 +68,8 @@ class LoginViewModel {
             return nil
         }
     }
+    
+    var appState: AppState {
+        AppManager.shared.appState
+    }
 }

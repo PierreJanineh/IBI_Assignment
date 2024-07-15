@@ -14,14 +14,16 @@ class AuthenticationService {
     private static let biometricNotAvailable: LocalizedStringResource = "biometric not available"
     private static let invalidCredentials: LocalizedStringResource = "invalid credentials"
     
+    private let appManager: AppManager = .shared
     private let laContext: LAContext = .init()
     private var error: NSError?
     
     func authenticate(username: String,
                       password: String) -> Future<Bool, Error> {
-        return Future { promise in
+        return Future { [weak self] promise in
             // Dummy implementation
             if username == "admin" && password == "password" {
+                self?.appManager.setAppState(.loggedIn)
                 promise(.success(true))
             } else {
                 let error = NSError(domain: "",
@@ -51,6 +53,7 @@ class AuthenticationService {
                                      localizedReason: reason) { success, authenticationError in
                 DispatchQueue.main.async {
                     if success {
+                        self.appManager.setAppState(.loggedIn)
                         promise(.success(success))
                     } else {
                         let error = NSError(domain: "",
