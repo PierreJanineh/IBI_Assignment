@@ -8,8 +8,8 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
-    let product: Product
-          
+    let product: ProductEntity
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.bounces = true
@@ -24,17 +24,12 @@ class ProductDetailViewController: UIViewController {
     }()
     
     private lazy var imagePageView: ImagePageViewController = {
-        let imgs: [UIImageView] = {
-            var imgs: [UIImageView] = []
-            for image in self.product.images {
-                let uiimage = UIImageView()
-                uiimage.sd_setImage(with: image)
-                imgs.append(uiimage)
-            }
-            return imgs
-        }()
-        let pager = ImagePageViewController(images: imgs)
-        return pager
+        let imageViews: [UIImageView] = product.images.map {
+            let uiimage = UIImageView()
+            uiimage.sd_setImage(with: $0)
+            return uiimage
+        }
+        return ImagePageViewController(images: imageViews)
     }()
     
     private let titleLabel: UILabel = {
@@ -65,7 +60,14 @@ class ProductDetailViewController: UIViewController {
         return label
     }()
     
-    init(product: Product) {
+    private var favoritesButton: UIBarButtonItem {
+        UIBarButtonItem(title: "Favorite",
+                        image: UIImage(systemName: product.isFavorite ? "star.fill" : "star"),
+                        target: self,
+                        action: #selector(favoriteTapped))
+    }
+    
+    init(product: ProductEntity) {
         self.product = product
         
         super.init(nibName: nil, bundle: nil)
@@ -80,11 +82,7 @@ class ProductDetailViewController: UIViewController {
         
         title = product.title
         navigationController?.navigationBar.prefersLargeTitles = false
-        //TODO: Handle favorited already
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorite",
-                                                            image: UIImage(systemName: "star"),
-                                                            target: self,
-                                                            action: #selector(favoriteTapped))
+        navigationItem.rightBarButtonItem = favoritesButton
         view.backgroundColor = .white
         
         setupViews()
@@ -94,6 +92,8 @@ class ProductDetailViewController: UIViewController {
     @objc private func favoriteTapped() {
         //TODO: Implement this
         showAlert(message: "Added to favs!")
+        
+        navigationItem.rightBarButtonItem = favoritesButton
     }
     
     private func setupViews() {
@@ -130,7 +130,7 @@ class ProductDetailViewController: UIViewController {
         ])
     }
     
-    private func configure(with product: Product) {
+    private func configure(with product: ProductEntity) {
         titleLabel.text = product.title
         brandLabel.text = product.brand
         descriptionLabel.text = product.desc

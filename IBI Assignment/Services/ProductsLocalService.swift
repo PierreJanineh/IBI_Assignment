@@ -15,6 +15,10 @@ class ProductsLocalService {
         return ModelContext(container)
     }()
     
+    func fetchFavoriteProducts() -> [ProductEntity]? {
+        fetchProducts(isFav: true)
+    }
+    
     func fetchAllProducts() -> [ProductEntity]? {
         fetchProducts()
     }
@@ -38,6 +42,13 @@ class ProductsLocalService {
         }
         
         products.forEach { context.insert($0) }
+        try? context.save()
+    }
+    
+    func favorite(_ product: ProductEntity) {
+        guard let context else { return }
+        
+        product.isFavorite.toggle()
         try? context.save()
     }
 }

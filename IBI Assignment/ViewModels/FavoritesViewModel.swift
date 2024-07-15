@@ -1,14 +1,14 @@
 //
-//  ProductsListViewModel.swift
+//  FavoritesViewModel.swift
 //  IBI Assignment
 //
-//  Created by Pierre Janineh on 10/07/2024.
+//  Created by Pierre Janineh on 14/07/2024.
 //
 
-import UIKit
+import Foundation
 import Combine
 
-class ProductsListViewModel {
+class FavoritesViewModel {
     private let dataManager: ProductsDataManager = .shared
     private var cancellables: Set<AnyCancellable> = .init()
     
@@ -21,21 +21,18 @@ class ProductsListViewModel {
     }
     
     func bindChanges() {
-        dataManager.$products
+        dataManager.$favProducts
             .compactMap { $0 }
-            .sink {  [weak self] products in
+            .sink { [weak self] favProducts in
                 guard let self else { return }
                 
-                data = products
+                data = favProducts
                 delegate?.dataChanged()
             }
             .store(in: &cancellables)
-        
-        dataManager.$error
-            .compactMap { $0 }
-            .sink { [weak self] error in
-                self?.delegate?.failedWith(error)
-            }
-            .store(in: &cancellables)
+    }
+    
+    func fetchFavProducts() {
+        dataManager.fetchFavProducts()
     }
 }

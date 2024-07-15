@@ -94,7 +94,7 @@ class ProductTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
-    func configure(with product: Product) {
+    func configure(with product: ProductEntity) {
         thumbnailImageView.sd_setImage(with: product.thumbnail)
         titleLabel.text = product.title
         brandLabel.text = product.brand

@@ -20,7 +20,20 @@ class ProductsDataManager {
     private let productsLocalService: ProductsLocalService = .init()
     
     @Published private(set) var error: Error?
-    @Published private(set) var products: [ProductEntity]?
+    @Published private(set) var products: [ProductEntity]? {
+        didSet {
+            fetchFavProducts()
+        }
+    }
+    @Published private(set) var favProducts: [ProductEntity]?
+    
+    func fetchFavProducts() {
+        self.favProducts = productsLocalService.fetchFavoriteProducts()
+    }
+    
+    func favorite(_ product: ProductEntity) {
+        productsLocalService.favorite(product)
+    }
     
     private func fetchProducts() {
         guard let products = productsLocalService.fetchAllProducts(),

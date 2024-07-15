@@ -34,6 +34,17 @@
         }
       }
     },
+    "favorites" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        }
+      }
+    },
     "invalid credentials" : {
       "extractionState" : "manual",
       "localizations" : {

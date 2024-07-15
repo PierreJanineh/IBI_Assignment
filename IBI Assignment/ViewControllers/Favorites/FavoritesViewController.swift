@@ -1,17 +1,17 @@
 //
-//  ProductsListViewController.swift
+//  FavoritesViewController.swift
 //  IBI Assignment
 //
-//  Created by Pierre Janineh on 10/07/2024.
+//  Created by Pierre Janineh on 14/07/2024.
 //
 
 import UIKit
 import Combine
 
-class ProductsListViewController: PaginableProductsTableViewController {
-    private static let title: String.LocalizationValue = "products"
+class FavoritesViewController: PaginableProductsTableViewController {
+    private static let title: String.LocalizationValue = "favorites"
     
-    private let viewModel: ProductsListViewModel = .init()
+    private let viewModel: FavoritesViewModel = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +26,12 @@ class ProductsListViewController: PaginableProductsTableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         parent?.title = String(localized: Self.title)
+        
+        viewModel.fetchFavProducts()
     }
 }
 
-extension ProductsListViewController: PaginableDelegate {
+extension FavoritesViewController: PaginableDelegate {
     func productsForTableView() -> [ProductEntity] {
         viewModel.data
     }
@@ -37,6 +39,6 @@ extension ProductsListViewController: PaginableDelegate {
     func maxItemsPerPage() -> Int { 5 }
 }
 
-extension ProductsListViewController: ChangeableViewModelDelegate {
+extension FavoritesViewController: ChangeableViewModelDelegate {
     func dataChanged() { reloadData() }
 }
