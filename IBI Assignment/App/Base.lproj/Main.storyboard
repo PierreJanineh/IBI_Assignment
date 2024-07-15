@@ -103,7 +103,7 @@
         <!--Favourites-->
         <scene sceneID="K4u-3H-096">
             <objects>
-                <viewController id="DkO-8K-MGB" userLabel="Favourites" sceneMemberID="viewController">
+                <viewController id="DkO-8K-MGB" userLabel="Favourites" customClass="FavoritesViewController" customModule="IBI_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1UN-zs-rQE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

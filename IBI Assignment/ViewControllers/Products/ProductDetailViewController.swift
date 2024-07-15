@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
-    let product: ProductEntity
+    private let viewModel: ProductDetailViewModel
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -24,7 +24,7 @@ class ProductDetailViewController: UIViewController {
     }()
     
     private lazy var imagePageView: ImagePageViewController = {
-        let imageViews: [UIImageView] = product.images.map {
+        let imageViews: [UIImageView] = viewModel.product.images.map {
             let uiimage = UIImageView()
             uiimage.sd_setImage(with: $0)
             return uiimage
@@ -62,13 +62,13 @@ class ProductDetailViewController: UIViewController {
     
     private var favoritesButton: UIBarButtonItem {
         UIBarButtonItem(title: "Favorite",
-                        image: UIImage(systemName: product.isFavorite ? "star.fill" : "star"),
+                        image: UIImage(systemName: viewModel.product.isFavorite ? "star.fill" : "star"),
                         target: self,
                         action: #selector(favoriteTapped))
     }
     
     init(product: ProductEntity) {
-        self.product = product
+        self.viewModel = .init(product)
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -80,18 +80,17 @@ class ProductDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = product.title
+        title = viewModel.product.title
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = favoritesButton
         view.backgroundColor = .white
         
         setupViews()
-        configure(with: product)
+        configure(with: viewModel.product)
     }
     
     @objc private func favoriteTapped() {
-        //TODO: Implement this
-        showAlert(message: "Added to favs!")
+        viewModel.favorite()
         
         navigationItem.rightBarButtonItem = favoritesButton
     }
