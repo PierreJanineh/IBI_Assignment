@@ -11,11 +11,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
+    func reloadRootViewController() {
+        guard let window = self.window else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window.rootViewController = storyboard.instantiateInitialViewController()
+        UIView.appearance().semanticContentAttribute = AppManager.shared.language == .hebrew ? .forceRightToLeft : .forceLeftToRight
+        window.makeKeyAndVisible()
+    }
+    
+    func setColorScheme(_ scheme: ColorScheme? = nil) {
+        guard let scheme else {
+            setColorScheme(UserDefaultsService.init().colorScheme)
+            return
+        }
+        
+        switch scheme {
+        case .system:
+            window?.overrideUserInterfaceStyle = .unspecified
+        case .dark:
+            window?.overrideUserInterfaceStyle = .dark
+        case .light:
+            window?.overrideUserInterfaceStyle = .light
+        }
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        setColorScheme()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
