@@ -11,9 +11,14 @@
 		872D92132C429168001A8E7A /* Collection+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92122C429168001A8E7A /* Collection+SafeIndex.swift */; };
 		872D92162C43AD8F001A8E7A /* ImagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92152C43AD8F001A8E7A /* ImagePageViewController.swift */; };
 		872D92182C43AE27001A8E7A /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92172C43AE27001A8E7A /* SingleImageViewController.swift */; };
+		872D921B2C43B7CE001A8E7A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D921A2C43B7CE001A8E7A /* FavoritesViewController.swift */; };
+		872D921D2C43B88F001A8E7A /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D921C2C43B88F001A8E7A /* FavoritesViewModel.swift */; };
+		872D92202C43BCAA001A8E7A /* PaginableProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D921F2C43BCAA001A8E7A /* PaginableProductsTableViewController.swift */; };
 		872D92232C44EBCE001A8E7A /* ProductsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92222C44EBCE001A8E7A /* ProductsDataManager.swift */; };
 		872D92272C451282001A8E7A /* ProductsLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92262C451282001A8E7A /* ProductsLocalService.swift */; };
 		872D922A2C4512E0001A8E7A /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92292C4512E0001A8E7A /* ProductEntity.swift */; };
+		872D922C2C451516001A8E7A /* ChangeableViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D922B2C451516001A8E7A /* ChangeableViewModelDelegate.swift */; };
+		872D922E2C451727001A8E7A /* PaginableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D922D2C451727001A8E7A /* PaginableDelegate.swift */; };
 		87A35BD52C3F488C00A874BC /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */; };
 		87A35BD82C3F4CE000A874BC /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A35BD72C3F4CE000A874BC /* ProductTableViewCell.swift */; };
 		87A35BDA2C3F4F8100A874BC /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A35BD92C3F4F8100A874BC /* ProductDetailViewController.swift */; };
@@ -47,9 +52,14 @@
 		872D92122C429168001A8E7A /* Collection+SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeIndex.swift"; sourceTree = "<group>"; };
 		872D92152C43AD8F001A8E7A /* ImagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePageViewController.swift; sourceTree = "<group>"; };
 		872D92172C43AE27001A8E7A /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
+		872D921A2C43B7CE001A8E7A /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		872D921C2C43B88F001A8E7A /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		872D921F2C43BCAA001A8E7A /* PaginableProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableProductsTableViewController.swift; sourceTree = "<group>"; };
 		872D92222C44EBCE001A8E7A /* ProductsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDataManager.swift; sourceTree = "<group>"; };
 		872D92262C451282001A8E7A /* ProductsLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsLocalService.swift; sourceTree = "<group>"; };
 		872D92292C4512E0001A8E7A /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
+		872D922B2C451516001A8E7A /* ChangeableViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeableViewModelDelegate.swift; sourceTree = "<group>"; };
+		872D922D2C451727001A8E7A /* PaginableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginableDelegate.swift; sourceTree = "<group>"; };
 		87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
 		87A35BD72C3F4CE000A874BC /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		87A35BD92C3F4F8100A874BC /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +110,23 @@
 				872D92172C43AE27001A8E7A /* SingleImageViewController.swift */,
 			);
 			path = ImagePageViewController;
+			sourceTree = "<group>";
+		};
+		872D92192C43B79E001A8E7A /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				872D921A2C43B7CE001A8E7A /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		872D921E2C43BC7B001A8E7A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				872D922D2C451727001A8E7A /* PaginableDelegate.swift */,
+				872D921F2C43BCAA001A8E7A /* PaginableProductsTableViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		872D92212C44EBB6001A8E7A /* Managers */ = {
@@ -185,6 +212,8 @@
 			children = (
 				87B0F00F2C3D6D5D0095359A /* LoginViewController.swift */,
 				87A35BD62C3F4CA900A874BC /* Products */,
+				872D92192C43B79E001A8E7A /* Favorites */,
+				872D921E2C43BC7B001A8E7A /* Common */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,8 +241,10 @@
 		87B0F02A2C3DB3A90095359A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				872D922B2C451516001A8E7A /* ChangeableViewModelDelegate.swift */,
 				87B0F02E2C3DB51C0095359A /* LoginViewModel.swift */,
 				87B0F0522C3EE5CF0095359A /* ProductsListViewModel.swift */,
+				872D921C2C43B88F001A8E7A /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -350,17 +381,22 @@
 				87B0F0102C3D6D5D0095359A /* LoginViewController.swift in Sources */,
 				87B0F00C2C3D6D5D0095359A /* AppDelegate.swift in Sources */,
 				87B0F0312C3DB54D0095359A /* AuthenticationService.swift in Sources */,
+				872D92202C43BCAA001A8E7A /* PaginableProductsTableViewController.swift in Sources */,
 				872D92232C44EBCE001A8E7A /* ProductsDataManager.swift in Sources */,
+				872D921B2C43B7CE001A8E7A /* FavoritesViewController.swift in Sources */,
+				872D922E2C451727001A8E7A /* PaginableDelegate.swift in Sources */,
 				87B0F0372C3EDA720095359A /* ProductsListViewController.swift in Sources */,
 				872D922A2C4512E0001A8E7A /* ProductEntity.swift in Sources */,
 				87B0F0332C3DBA950095359A /* AuthResponse.swift in Sources */,
 				87B0F02F2C3DB51D0095359A /* LoginViewModel.swift in Sources */,
+				872D921D2C43B88F001A8E7A /* FavoritesViewModel.swift in Sources */,
 				87B0F04F2C3EDF720095359A /* Category.swift in Sources */,
 				87B0F0402C3EDB1C0095359A /* Product.swift in Sources */,
 				87B0F04D2C3EDF5A0095359A /* Meta.swift in Sources */,
 				87A35BD52C3F488C00A874BC /* UIViewController+UIAlertController.swift in Sources */,
 				87B0F0492C3EDF3E0095359A /* Dimensions.swift in Sources */,
 				87B0F04B2C3EDF4C0095359A /* Review.swift in Sources */,
+				872D922C2C451516001A8E7A /* ChangeableViewModelDelegate.swift in Sources */,
 				87B0F0442C3EDECD0095359A /* JSONDecoder+DecodingStrategy.swift in Sources */,
 				872D92132C429168001A8E7A /* Collection+SafeIndex.swift in Sources */,
 				87B0F0532C3EE5CF0095359A /* ProductsListViewModel.swift in Sources */,
