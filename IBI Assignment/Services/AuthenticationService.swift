@@ -10,6 +10,10 @@ import LocalAuthentication
 import Combine
 
 class AuthenticationService {
+    private static let biometricEvaluationReason: LocalizedStringResource = "biometric evaluation reason"
+    private static let biometricNotAvailable: LocalizedStringResource = "biometric not available"
+    private static let invalidCredentials: LocalizedStringResource = "invalid credentials"
+    
     private let laContext: LAContext = .init()
     private var error: NSError?
     
@@ -22,7 +26,7 @@ class AuthenticationService {
             } else {
                 let error = NSError(domain: "",
                                     code: 0,
-                                    userInfo: [NSLocalizedDescriptionKey : String(localized: "invalid credentials")])
+                                    userInfo: [NSLocalizedDescriptionKey : Self.invalidCredentials.localized])
                 promise(.failure(error))
             }
         }
@@ -37,12 +41,12 @@ class AuthenticationService {
             else {
                 let error = NSError(domain: "",
                                     code: 0,
-                                    userInfo: [NSLocalizedDescriptionKey : String(localized: "biometric not available")])
+                                    userInfo: [NSLocalizedDescriptionKey : Self.biometricNotAvailable.localized])
                 promise(.failure(error))
                 return
             }
             
-            let reason = String(localized: "biometric evaluation reason")
+            let reason = Self.biometricEvaluationReason.localized
             laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
                                      localizedReason: reason) { success, authenticationError in
                 DispatchQueue.main.async {

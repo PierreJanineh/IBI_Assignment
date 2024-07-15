@@ -10,6 +10,13 @@ import Combine
 import Lottie
 
 class LoginViewController: UIViewController {
+    private static var lottieAnimation: String = "Login"
+    private static var toNavigationController: String = "navigationController"
+    private static var loginSuccessful: LocalizedStringResource = "login successful"
+    private static var username: LocalizedStringResource = "username"
+    private static var password: LocalizedStringResource = "password"
+    private static var login: LocalizedStringResource = "login"
+    
     @IBOutlet private weak var usernameField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
     @IBOutlet private weak var animationView: LottieAnimationView!
@@ -38,23 +45,28 @@ class LoginViewController: UIViewController {
         viewModel.$authResponse
             .compactMap { $0 }
             .sink { [weak self] authResponse in
-                let message: String? = {
-                    guard let success = authResponse.success else { return nil }
-                    if let error = authResponse.error,
-                       !success {
-                        return error
-                    } else {
-                        return String(localized: "login successful")
+                guard let success = authResponse.success
+                else { return }
+                
+                guard success
+                else {
+                    guard let error = authResponse.error else { return }
+                    self?.showAlert(message: error) {
                     }
-                }()
-                guard let message else { return }
-                self?.showAlert(message: message)
+                    return
+                }
             }
             .store(in: &cancellables)
     }
     
+    func setupView() {
+        usernameField.placeholder = Self.username.localized
+        passwordField.placeholder = Self.password.localized
+        loginButton.setTitle(Self.login.localized, for: .normal)
+    }
+    
     func setupAnimation() {
-        let animation = LottieAnimation.named("Login")
+        let animation = LottieAnimation.named(Self.lottieAnimation)
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop

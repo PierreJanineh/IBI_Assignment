@@ -9,9 +9,15 @@ import UIKit
 import Combine
 
 class FavoritesViewController: PaginableProductsTableViewController {
-    private static let title: String.LocalizationValue = "favorites"
+    private static let title: LocalizedStringResource = "favorites"
     
     private let viewModel: FavoritesViewModel = .init()
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        tabBarItem.title = Self.title.localized
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +31,7 @@ class FavoritesViewController: PaginableProductsTableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        parent?.title = String(localized: Self.title)
+        parent?.title = Self.title.localized
         
         viewModel.fetchFavProducts()
     }

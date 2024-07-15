@@ -9,6 +9,8 @@ import Foundation
 import Combine
 
 class LoginViewModel {
+    private static let bothCredentialsNeeded: LocalizedStringResource = "both credentials needed"
+    
     private let authenticationService: AuthenticationService = .init()
     private var cancellables: Set<AnyCancellable> = .init()
     
@@ -22,7 +24,7 @@ class LoginViewModel {
               let password, !password.isEmpty
         else {
             self.authResponse = .init(success: false,
-                                      error: String(localized: "both credentials needed"))
+                                      error: Self.bothCredentialsNeeded.localized)
             return
         }
         

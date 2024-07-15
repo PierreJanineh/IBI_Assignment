@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "16o-vf-BzP"; */
+"16o-vf-BzP.configuration.title" = "כניסה";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "16o-vf-BzP"; */
+"16o-vf-BzP.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Products"; ObjectID = "2qJ-QP-yB9"; */
+"2qJ-QP-yB9.title" = "מוצרים";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4xp-pj-K0H"; */
+"4xp-pj-K0H.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "T8v-f7-6Y2"; */
+"T8v-f7-6Y2.title" = "הגדרות";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "cuf-rL-XUZ"; */
+"cuf-rL-XUZ.placeholder" = "שם משתמש";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "gdg-5U-Myh"; */
+"gdg-5U-Myh.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gdg-5U-Myh"; */
+"gdg-5U-Myh.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "o31-pz-gNo"; */
+"o31-pz-gNo.placeholder" = "סיסמה";
+
+/* Class = "UITextView"; text = "Lorem ipsum:"; ObjectID = "qlf-Aq-z7W"; */
+"qlf-Aq-z7W.text" = "Lorem ipsum:";

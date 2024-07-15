@@ -28,6 +28,7 @@
 		872D923E2C45339D001A8E7A /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D923D2C45339D001A8E7A /* TableSection.swift */; };
 		872D92442C456AED001A8E7A /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92432C456AED001A8E7A /* UserDefaultsService.swift */; };
 		872D92462C457F68001A8E7A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92452C457F68001A8E7A /* AppManager.swift */; };
+		872D924C2C459519001A8E7A /* LocalizedStringResource+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D924B2C459519001A8E7A /* LocalizedStringResource+Language.swift */; };
 		872D92512C45B3A4001A8E7A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92502C45B3A4001A8E7A /* AppState.swift */; };
 		872D92532C45CE71001A8E7A /* SettingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872D92522C45CE71001A8E7A /* SettingEnum.swift */; };
 		87A35BD52C3F488C00A874BC /* UIViewController+UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */; };
@@ -80,6 +81,8 @@
 		872D923D2C45339D001A8E7A /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		872D92432C456AED001A8E7A /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		872D92452C457F68001A8E7A /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		872D92482C458396001A8E7A /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Main.strings; sourceTree = "<group>"; };
+		872D924B2C459519001A8E7A /* LocalizedStringResource+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringResource+Language.swift"; sourceTree = "<group>"; };
 		872D92502C45B3A4001A8E7A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		872D92522C45CE71001A8E7A /* SettingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEnum.swift; sourceTree = "<group>"; };
 		87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIAlertController.swift"; sourceTree = "<group>"; };
@@ -315,6 +318,7 @@
 				87B0F0432C3EDECD0095359A /* JSONDecoder+DecodingStrategy.swift */,
 				87A35BD42C3F488C00A874BC /* UIViewController+UIAlertController.swift */,
 				872D92122C429168001A8E7A /* Collection+SafeIndex.swift */,
+				872D924B2C459519001A8E7A /* LocalizedStringResource+Language.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +383,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 87B0EFFF2C3D6D5D0095359A;
 			packageReferences = (
@@ -420,6 +425,7 @@
 				872D92162C43AD8F001A8E7A /* ImagePageViewController.swift in Sources */,
 				87A35BDA2C3F4F8100A874BC /* ProductDetailViewController.swift in Sources */,
 				872D92442C456AED001A8E7A /* UserDefaultsService.swift in Sources */,
+				872D924C2C459519001A8E7A /* LocalizedStringResource+Language.swift in Sources */,
 				87B0F02D2C3DB3FB0095359A /* User.swift in Sources */,
 				872D92462C457F68001A8E7A /* AppManager.swift in Sources */,
 				872D923A2C4523C1001A8E7A /* Language.swift in Sources */,
@@ -467,6 +473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				87B0F0122C3D6D5D0095359A /* Base */,
+				872D92482C458396001A8E7A /* he */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

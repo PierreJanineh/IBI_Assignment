@@ -9,9 +9,15 @@ import UIKit
 import Combine
 
 class ProductsListViewController: PaginableProductsTableViewController {
-    private static let title: String.LocalizationValue = "products"
+    private static let title: LocalizedStringResource = "products"
     
     private let viewModel: ProductsListViewModel = .init()
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        tabBarItem.title = Self.title.localized
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +31,7 @@ class ProductsListViewController: PaginableProductsTableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        parent?.title = String(localized: Self.title)
+        parent?.title = Self.title.localized
     }
 }
 
