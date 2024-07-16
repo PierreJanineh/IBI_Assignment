@@ -83,7 +83,7 @@ class ProductDetailViewController: UIViewController {
         title = viewModel.product.title
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = favoritesButton
-        
+        view.backgroundColor = .white
         registerForTraitChanges([UITraitUserInterfaceStyle.self], action: #selector(setColor))
         
         setupViews()
