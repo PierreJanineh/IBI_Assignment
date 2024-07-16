@@ -35,4 +35,9 @@ class FavoritesViewModel {
     func fetchFavProducts() {
         dataManager.fetchFavProducts()
     }
+    
+    func remove(at: Int) {
+        dataManager.favorite(data[at])
+        data.remove(at: at)
+    }
 }

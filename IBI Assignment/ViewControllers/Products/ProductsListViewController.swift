@@ -41,6 +41,8 @@ extension ProductsListViewController: PaginableDelegate {
     }
     
     func maxItemsPerPage() -> Int { 5 }
+    
+    func remove(at: Int) { viewModel.remove(at: at) }
 }
 
 extension ProductsListViewController: ChangeableViewModelDelegate {

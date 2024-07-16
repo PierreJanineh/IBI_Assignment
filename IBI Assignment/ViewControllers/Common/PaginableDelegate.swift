@@ -10,4 +10,5 @@ import Foundation
 protocol PaginableDelegate {
     func productsForTableView() -> [ProductEntity]
     func maxItemsPerPage() -> Int
+    func remove(at: Int)
 }

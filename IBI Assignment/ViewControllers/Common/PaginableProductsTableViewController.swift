@@ -104,6 +104,16 @@ extension PaginableProductsTableViewController: UITableViewDelegate {
             loadMoreData()
         }
     }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            currentlyDisplayedProducts.remove(at: indexPath.row)
+            paginationDelegate?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 extension PaginableProductsTableViewController: UITableViewDataSource {
