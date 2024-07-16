@@ -321,6 +321,23 @@
         }
       }
     },
+    "reload" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reload"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "טעינה מחדש"
+          }
+        }
+      }
+    },
     "settings" : {
       "localizations" : {
         "en" : {

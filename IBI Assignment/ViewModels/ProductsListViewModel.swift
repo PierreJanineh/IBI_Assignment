@@ -43,4 +43,8 @@ class ProductsListViewModel {
         dataManager.remove(data[at])
         data.remove(at: at)
     }
+    
+    func reloadFromServer() {
+        dataManager.fetchFromProductsService()
+    }
 }

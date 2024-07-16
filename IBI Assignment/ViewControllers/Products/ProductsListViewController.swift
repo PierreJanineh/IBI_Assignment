@@ -10,8 +10,16 @@ import Combine
 
 class ProductsListViewController: PaginableProductsTableViewController {
     private static let title: LocalizedStringResource = "products"
+    private static let reload: LocalizedStringResource = "reload"
     
     private let viewModel: ProductsListViewModel = .init()
+    
+    private var reloadFromServerButton: UIBarButtonItem {
+        UIBarButtonItem(title: Self.reload.localized,
+                        image: UIImage(systemName: "arrow.clockwise"),
+                        target: self,
+                        action: #selector(reloadFromServer))
+    }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -31,7 +39,18 @@ class ProductsListViewController: PaginableProductsTableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        parent?.navigationItem.setRightBarButton(reloadFromServerButton, animated: true)
         parent?.title = Self.title.localized
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        parent?.navigationItem.setRightBarButton(nil, animated: true)
+    }
+    
+    @objc func reloadFromServer() {
+        viewModel.reloadFromServer()
     }
 }
 

@@ -27,6 +27,7 @@ class PaginableProductsTableViewController: UIViewController {
     }
     
     func reloadData() {
+        currentlyDisplayedProducts = []
         tableView?.reloadData()
         loadMoreData()
     }

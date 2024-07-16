@@ -46,7 +46,7 @@ class ProductsDataManager {
         self.products = products
     }
     
-    private func fetchFromProductsService() {
+    func fetchFromProductsService() {
         productsService.fetchProducts()?
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
