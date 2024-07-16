@@ -9,28 +9,28 @@ import Foundation
 import SwiftData
 
 @Model final class ProductEntity {
-    let id: Int
-    let title: String
-    let desc: String
-    let category: Category
-    let price: Double
-    let discountPercentage: Double
-    let rating: Double
-    let stock: Int
-    let tags: [Tag]
-    let brand: String?
-    let sku: String
-    let weight: Int
-    let dimensions: Dimensions
-    let warrantyInformation: String
-    let shippingInformation: String
-    let availabilityStatus: String
-    let reviews: [Review]
-    let returnPolicy: String
-    let minimumOrderQuantity: Int
-    let meta: Meta
-    let images: [URL]
-    let thumbnail: URL
+    var id: Int
+    var title: String
+    var desc: String
+    var category: Category
+    var price: Double
+    var discountPercentage: Double
+    var rating: Double
+    var stock: Int
+    var tags: [Tag]
+    var brand: String?
+    var sku: String
+    var weight: Int
+    var dimensions: Dimensions
+    var warrantyInformation: String
+    var shippingInformation: String
+    var availabilityStatus: String
+    var reviews: [Review]
+    var returnPolicy: String
+    var minimumOrderQuantity: Int
+    var meta: Meta
+    var images: [URL]
+    var thumbnail: URL
     var isFavorite: Bool = false
     
     init(product: Product) {

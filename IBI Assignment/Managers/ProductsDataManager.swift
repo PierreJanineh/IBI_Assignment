@@ -62,4 +62,16 @@ class ProductsDataManager {
             }
             .store(in: &cancellables)
     }
+    
+    func saveContext() {
+        productsLocalService.save()
+    }
+    
+    func remove(_ product: ProductEntity) {
+        productsLocalService.remove(product)
+    }
+    
+    func add(_ product: ProductEntity) {
+        productsLocalService.add(product)
+    }
 }

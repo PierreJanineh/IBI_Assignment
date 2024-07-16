@@ -51,4 +51,18 @@ class ProductsLocalService {
         product.isFavorite.toggle()
         try? context.save()
     }
+    
+    func save() {
+        try? context?.save()
+    }
+    
+    func remove(_ product: ProductEntity) {
+        context?.delete(product)
+        save()
+    }
+    
+    func add(_ product: ProductEntity) {
+        context?.insert(product)
+        save()
+    }
 }
