@@ -140,4 +140,19 @@ class ProductDetailViewController: UIViewController {
         descriptionLabel.text = product.desc
         priceLabel.text = "$\(product.price)"
     }
+    
+    //TODO: Not implemented in UI
+    private func edit(title: String,
+                      brand: String?,
+                      desc: String,
+                      price: Double) {
+        viewModel.editProduct(title: title,
+                              brand: brand,
+                              desc: desc,
+                              price: price)
+    }
+    
+    private func remove() {
+        viewModel.removeProduct()
+    }
 }

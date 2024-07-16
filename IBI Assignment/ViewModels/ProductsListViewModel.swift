@@ -39,6 +39,11 @@ class ProductsListViewModel {
             .store(in: &cancellables)
     }
     
+    // TODO: Not implemented in UI
+    func add(_ product: ProductEntity) {
+        dataManager.add(product)
+    }
+    
     func remove(at: Int) {
         dataManager.remove(data[at])
         data.remove(at: at)

@@ -49,6 +49,11 @@ class ProductsListViewController: PaginableProductsTableViewController {
         parent?.navigationItem.setRightBarButton(nil, animated: true)
     }
     
+    // TODO: Not implemented in UI
+    private func add(_ product: ProductEntity) {
+        viewModel.add(product)
+    }
+    
     @objc func reloadFromServer() {
         viewModel.reloadFromServer()
     }

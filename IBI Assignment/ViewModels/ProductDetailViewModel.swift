@@ -19,4 +19,20 @@ class ProductDetailViewModel {
     func favorite() {
         dataManager.favorite(product)
     }
+    
+    //TODO: Not implemented in UI
+    func editProduct(title: String,
+                     brand: String?,
+                     desc: String,
+                     price: Double) {
+        product.title = title
+        product.brand = brand
+        product.desc = desc
+        product.price = price
+        dataManager.saveContext()
+    }
+    
+    func removeProduct() {
+        dataManager.remove(product)
+    }
 }
