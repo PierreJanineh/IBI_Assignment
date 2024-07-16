@@ -24,7 +24,7 @@ class UserDefaultsService {
         return Language.from(code: code)
     }
     
-    func setScheme(_ scheme: ColorScheme) {
+    func setColorScheme(_ scheme: ColorScheme) {
         UserDefaults.standard.set(scheme.code, forKey: Self.scheme)
     }
     

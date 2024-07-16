@@ -12,11 +12,6 @@ class SettingsButtonTableViewCell: UITableViewCell, ConfigurableCell {
     
     @IBOutlet weak var button: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func configure(kind: SettingKind) {
         button.tag = kind.rawValue
         button.setTitle(kind.description, for: .normal)

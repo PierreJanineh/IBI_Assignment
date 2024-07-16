@@ -21,6 +21,18 @@ class AppManager {
         userDefaultsService.language
     }
     
+    func setLanguage(_ language: Language) {
+        userDefaultsService.setLanguage(language)
+    }
+    
+    var colorScheme: ColorScheme {
+        userDefaultsService.colorScheme
+    }
+    
+    func setColorScheme(_ colorScheme: ColorScheme) {
+        userDefaultsService.setColorScheme(colorScheme)
+    }
+    
     func setAppState(_ appState: AppState) {
         userDefaultsService.setAppState(appState)
     }

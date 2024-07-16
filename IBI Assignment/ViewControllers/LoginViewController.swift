@@ -88,6 +88,7 @@ class LoginViewController: UIViewController {
         
         usernameField.placeholder = Self.username.localized
         passwordField.placeholder = Self.password.localized
+        passwordField.isSecureTextEntry = true
         loginButton.setTitle(Self.login.localized, for: .normal)
     }
     

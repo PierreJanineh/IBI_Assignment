@@ -8,14 +8,13 @@
 import UIKit
 
 class SettingsViewModel {
-    private let userDefaultsService: UserDefaultsService = .init()
     private let appManager: AppManager = .shared
     
     var selectedLanguage: Language {
-        userDefaultsService.language
+        appManager.language
     }
     var selectedScheme: ColorScheme {
-        userDefaultsService.colorScheme
+        appManager.colorScheme
     }
     
     lazy var items: [TableSection] = [
@@ -36,10 +35,9 @@ class SettingsViewModel {
         guard let language = Language(rawValue: i)
         else { return }
         
-        userDefaultsService.setLanguage(language)
+        appManager.setLanguage(language)
         
         // Reload the root view controller
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
         sceneDelegate?.reloadRootViewController()
     }
     
@@ -47,10 +45,9 @@ class SettingsViewModel {
         guard let scheme = ColorScheme(rawValue: i)
         else { return }
         
-        userDefaultsService.setScheme(scheme)
+        appManager.setColorScheme(scheme)
         
         // Apply color scheme selection
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
         sceneDelegate?.setColorScheme(scheme)
     }
     
@@ -58,7 +55,10 @@ class SettingsViewModel {
         appManager.setAppState(.loggedOut)
         
         // Reload the root view controller
-        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
         sceneDelegate?.reloadRootViewController()
+    }
+    
+    private var sceneDelegate: SceneDelegate? {
+        UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
     }
 }

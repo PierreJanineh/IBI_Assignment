@@ -37,7 +37,7 @@ class SettingsViewController: UITableViewController {
         schemePicker?.selectRow(viewModel.selectedScheme.rawValue, inComponent: 0, animated: true)
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table view data source and delegate
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let string = viewModel.items[safe: section]?.title
         else { return "" }
@@ -79,9 +79,9 @@ class SettingsViewController: UITableViewController {
     
     private func assignPickerValue(_ kind: SettingKind, picker: UIPickerView) {
         switch kind {
-        case .language(let onSelect):
+        case .language(_):
             languagePicker = picker
-        case .coloScheme(let onSelect):
+        case .coloScheme(_):
             schemePicker = picker
         default: break
         }
