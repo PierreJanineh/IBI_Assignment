@@ -86,6 +86,9 @@ class LoginViewController: UIViewController {
     func setupView() {
         view.bringSubviewToFront(overlayProgress)
         
+        usernameField.delegate = self
+        passwordField.delegate = self
+        
         usernameField.placeholder = Self.username.localized
         passwordField.placeholder = Self.password.localized
         passwordField.isSecureTextEntry = true
@@ -108,5 +111,12 @@ class LoginViewController: UIViewController {
         }
         
         biometricButton.setImage(UIImage(systemName: systemName), for: .normal)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
